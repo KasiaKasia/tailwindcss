@@ -1,0 +1,59 @@
+<div class= "flex items-center justify-center mx-auto max-w-screen-2xl p-4 md:p-8 2xl:p-10">
+    <div *ngIf="isVisible" class="mt-2 grid place-items-center text-green-700">
+        {{ message }}
+      </div>
+      <form class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-400 font-medium w-full max-w-3xl" [formGroup]="formBuilderGroup"
+        (ngSubmit)="save()">
+
+        <div class="grid grid-cols-1 gap-9">
+
+            <label>
+                <span>DATE</span>
+                <input type="date" formControlName="date"
+                    class="mt-1 flex w-full  border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    placeholder="dd.mm.rrrr">
+            </label>
+
+
+            <label >
+                <span>LOCATION</span>
+                <input type="text" formControlName="location"
+                    class="mt-1 flex w-full border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    placeholder="location">
+            </label>
+
+
+            <label>
+                <span>CONTENT</span>
+                <textarea formControlName="content"
+                    class="mt-1 flex w-full  border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    rows="3" placeholder="content"></textarea>
+            </label>
+
+
+            <fieldset>
+                <label>DISPLAY</label>
+            
+                <div class="mt-2" formGroupName="display">
+                    <div>
+                        <label class="inline-flex items-center ">
+                            <input class="form-radio" type="radio" name="radio-direct" [value]="true" name="selected"
+                                formControlName="selected">
+                            <span class="ml-2">ON</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="inline-flex items-center">
+                            <input class="form-radio" type="radio" name="radio-direct" [value]="false" name="selected"
+                                formControlName="selected">
+                            <span class="ml-2">OF</span>
+                        </label>
+                    </div>
+
+                </div>
+            </fieldset>
+            <button type="submit" class=" border-green-700 text-green-700 justify-center rounded-md border border-meta-3 px-10 py-4 text-center font-medium text-meta-3 hover:bg-opacity-90 lg:px-8 xl:px-10">Submit</button>
+
+        </div>
+    </form>
+</div>

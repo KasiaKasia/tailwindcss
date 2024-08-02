@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .border-custom-gradient {
+        border-width: 2px;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to right, #3acfd5, #3a4ed5);
+    }
+    .shadow-custom {
+        box-shadow: 0 0 5px rgba(30, 60, 114, 0.5);
+    }
+}
