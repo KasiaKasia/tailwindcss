@@ -78,9 +78,9 @@ export const TasksStore = signalStore(
             });
             patchState(store, { tasks: filter, isLoading: true });
         },
-        filter(value: string = '') {
+        filter(value: string = '') { 
             const formattedValue = value.toLowerCase();
-        console.log(value)
+    
             const filter = tasks.filter(task => {
                 const matchesDate = task.date ? formatDate(task.date).toLowerCase().includes(formattedValue) : false;
                 const matchesLocation = task.location ? task.location.toLowerCase().includes(formattedValue) : false;
